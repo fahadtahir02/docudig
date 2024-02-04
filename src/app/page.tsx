@@ -1,5 +1,8 @@
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import Image from "next/image";
+import Link from 'next/Link'
+import { ArrowRight } from "lucide-react";
+import { buttonVariants } from "@/components/ui/button";
 
 export default function Home() {
   return (
@@ -12,6 +15,18 @@ export default function Home() {
       <h1 className="max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl ">
         Chat with your <span className="text-blue-600">documents</span> in seconds
       </h1>
+      <p className = "mt-4 max-w-prose text-zinc-700 sm:text-lg">
+        DocuDig allows you to converse with your document. Simply upload your file and start asking away
+      </p>
+
+      {/* downloaded 'pnpm install lucide-react' for good looking icons 
+          npx shadcn-ui@latest init
+          - A cli allows us to import any component along with its styling straight from shad
+          - ex npx shadcn-ui@latest add button - bassically will add a .tsx file with a button component
+      */}
+      <Link className={buttonVariants()} href="/dashboard" target="_blank">
+        Get Started <ArrowRight className="ml-2 h-5 w-5"/>
+      </Link>
 
 
       </MaxWidthWrapper>
